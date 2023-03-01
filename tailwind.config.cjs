@@ -1,0 +1,15 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    colors: {
+      "pmd-blue-100": "#d9e4ff",
+      "pmd-blue-600": "#262a57",
+      "pmd-blue-800": "#1e2140",
+      "pmd-blue-900": "#151932",
+      "pmd-red-700": "#262a57",
+    },
+    extend: {},
+  },
+  plugins: [],
+};

@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-pmd-blue-800 flex justify-center items-center text-pmd-blue-100 min-h-screen;
+  }
+}
+
+@layer components {
+  .tw-timer-container {
+    @apply w-[20rem] h-[20rem] flex justify-center items-center rounded-full bg-gradient-to-t to-pmd-blue-600 from-pmd-blue-900  shadow-2xl shadow-pmd-blue-600;
+  }
+
+  .tw-timer {
+    @apply w-[17rem] h-[17rem] flex justify-center items-center rounded-full text-6xl bg-pmd-blue-900;
+  }
+}
