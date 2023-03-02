@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-pmd-blue-800 flex justify-center items-center text-pmd-blue-100 min-h-screen;
+    @apply bg-pmd-blue-800 flex justify-center items-center text-pmd-blue-100 min-h-screen font-fontFamily;
   }
 }
 
@@ -15,5 +17,17 @@
 
   .tw-timer {
     @apply w-[17rem] h-[17rem] flex justify-center items-center rounded-full text-6xl bg-pmd-blue-900;
+  }
+
+  .tw-infoContainer {
+    @apply bg-pmd-blue-900 flex justify-between items-center rounded-full p-3 mb-6;
+  }
+
+  .tw-infoItem {
+    @apply p-3 text-pmd-blue-300 font-semibold rounded-full text-xs flex-1 text-center;
+  }
+
+  .tw-infoItem.active {
+    @apply bg-pmd-red-700 text-pmd-blue-800;
   }
 }
