@@ -1,24 +1,33 @@
-import React, { useState, useRef } from "react";
 import Labels from "./components/Labels";
-import Timer from "./components/Timer";
+import TimeDisplay from "./components/TimeDisplay";
+import ToggleButton from "./components/ToggleButton";
+import useTimer from "./hooks/useTimer";
 
-function App() {
-  const [selectedControl, setSelectedControl] = useState(0);
+const App = () => {
+  const { pomodoro, selectedControl, setPomodoro, setSelectedControl } = useTimer();
 
   return (
     <>
       <Labels
-        selected={selectedControl}
-        handleEvent={(e) => {
-          setSelectedControl(e);
-        }}
-      />
-      <Timer
-        selected={selectedControl}
+        selectedControl={selectedControl}
         setSelectedControl={setSelectedControl}
       />
+      <div className="tw-timer-container">
+        <div className="tw-timer">
+          <div className="flex flex-col justify-center items-center font-semibold">
+            <TimeDisplay
+              pomodoro={pomodoro}
+              selectedControl={selectedControl}
+            />
+            <ToggleButton
+              pomodoro={pomodoro}
+              setPomodoro={setPomodoro}
+            />
+          </div>
+        </div>
+      </div>
     </>
   );
-}
+};
 
 export default App;

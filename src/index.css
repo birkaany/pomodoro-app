@@ -24,7 +24,7 @@
   }
 
   .tw-infoItem {
-    @apply p-3 text-pmd-blue-300 font-semibold rounded-full text-xs flex-1 text-center;
+    @apply p-3 text-pmd-blue-300 font-semibold rounded-full text-xs flex-1 text-center whitespace-nowrap;
   }
 
   .tw-infoItem.active {
