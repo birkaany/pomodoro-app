@@ -18,13 +18,12 @@ const App = () => {
         <div className="tw-timer">
           <div className="flex flex-col justify-center items-center font-semibold relative">
             <CircularProgressbarWithChildren
-              strokeWidth={1}
+              strokeWidth={2}
               trailColor="transparent"
               value={getRemainingTimePercentage()}
               styles={buildStyles({
                 trailColor: "transparent",
                 pathColor: "#f87070",
-                strokeLinecap: "butt",
               })}>
               <TimeDisplay
                 pomodoro={pomodoro}
