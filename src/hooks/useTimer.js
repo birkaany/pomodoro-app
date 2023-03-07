@@ -9,8 +9,17 @@ const useTimer = () => {
   const getRemainingTimePercentage = () => {
     const totalTime = stages[controllers[selectedControl].value];
     const remainingTime = pomodoro[controllers[selectedControl].value];
-
     return (remainingTime / totalTime) * 100;
+  };
+
+  // Reset timer values when selectControl activated
+  const resetTimerValues = () => {
+    setPomodoro((prevPomodoro) => ({
+      ...prevPomodoro,
+      pomodoroTime: stages.pomodoroTime,
+      shortBreakTime: stages.shortBreakTime,
+      longBreakTime: stages.longBreakTime,
+    }));
   };
 
   useEffect(() => {
@@ -23,7 +32,7 @@ const useTimer = () => {
             setSelectedControl((prevState) => {
               return prevState < controllers.length - 1 ? prevState + 1 : 0;
             });
-
+            resetTimerValues();
             clearInterval(timer);
             return prevPomodoro;
           }
@@ -34,13 +43,12 @@ const useTimer = () => {
         });
       }, 1000);
     }
-
     return () => {
       clearInterval(timer);
     };
   }, [pomodoro.isPaused, selectedControl, setPomodoro, setSelectedControl]);
 
-  return { pomodoro, setPomodoro, selectedControl, setSelectedControl, getRemainingTimePercentage };
+  return { pomodoro, setPomodoro, selectedControl, setSelectedControl, getRemainingTimePercentage, resetTimerValues };
 };
 
 export default useTimer;

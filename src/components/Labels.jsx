@@ -1,8 +1,9 @@
 import { controllers } from "../constants/constants";
 
-const Labels = ({ selectedControl, setSelectedControl }) => {
+const Labels = ({ selectedControl, setSelectedControl, resetTimerValues }) => {
   function handleSelectedControl(index) {
     setSelectedControl(index);
+    resetTimerValues();
   }
 
   return (

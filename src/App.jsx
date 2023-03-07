@@ -6,11 +6,12 @@ import { CircularProgressbarWithChildren, buildStyles } from "react-circular-pro
 import "react-circular-progressbar/dist/styles.css";
 
 const App = () => {
-  const { pomodoro, selectedControl, setPomodoro, setSelectedControl, getRemainingTimePercentage } = useTimer();
+  const { pomodoro, selectedControl, setPomodoro, setSelectedControl, getRemainingTimePercentage, resetTimerValues } = useTimer();
 
   return (
     <>
       <Labels
+        resetTimerValues={resetTimerValues}
         selectedControl={selectedControl}
         setSelectedControl={setSelectedControl}
       />
