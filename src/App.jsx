@@ -2,11 +2,13 @@ import Labels from "./components/Labels";
 import TimeDisplay from "./components/TimeDisplay";
 import ToggleButton from "./components/ToggleButton";
 import useTimer from "./hooks/useTimer";
-import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar";
+import { CircularProgressbarWithChildren, buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { stages, controllers } from "./constants/constants";
 
 const App = () => {
-  const { pomodoro, selectedControl, setPomodoro, setSelectedControl, getRemainingTimePercentage, resetTimerValues } = useTimer();
+  const { pomodoro, selectedControl, setPomodoro, setSelectedControl, resetTimerValues, getRemainingTimePercentage } = useTimer();
+  // Calculate percentage of remaining time for progress bar
 
   return (
     <>

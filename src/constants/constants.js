@@ -5,9 +5,9 @@ export const controllers = [
 ];
 
 export const stages = {
-  pomodoroTime: 25 * 60,
-  shortBreakTime: 5 * 60,
-  longBreakTime: 15 * 60,
+  pomodoroTime: 1 * 1,
+  shortBreakTime: 1 * 1,
+  longBreakTime: 1 * 1,
   isPaused: true,
-  period: 4,
+  period: 1,
 };
