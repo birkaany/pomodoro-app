@@ -1,12 +1,17 @@
 import { useEffect, useState, useRef, useContext } from "react";
 import { stages, controllers } from "../constants/constants";
 import { FormDataContext } from "../context/FormDataContext";
+import ring from "../assets/bell-ring.mp3";
 
 const useTimer = () => {
   const { formData } = useContext(FormDataContext);
   const [selectedControl, setSelectedControl] = useState(0);
   const [pomodoro, setPomodoro] = useState(stages);
   const periodId = useRef(stages.period);
+  const Sound = () => {
+    const audio = new Audio(ring);
+    return audio.play();
+  };
 
   const resetTimerValues = () => {
     setPomodoro((prevPomodoro) => ({
@@ -41,6 +46,8 @@ const useTimer = () => {
             periodId.current += 1;
             resetTimerValues();
             clearInterval(timer);
+            Sound();
+
             return prevPomodoro;
           }
           return {
