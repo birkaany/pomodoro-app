@@ -10,16 +10,11 @@ const Modal = ({ isSettingsOn, setIsSettingsOn, setPomodoro }) => {
     e.preventDefault();
     setPomodoro((prevPomodoro) => ({
       ...prevPomodoro,
-      pomodoroTime: formData.pomodoro * 60,
+      pomodoroTime: formData.pomodoroTime * 60,
       shortBreakTime: formData.shortBreakTime * 60,
       longBreakTime: formData.longBreakTime * 60,
     }));
     setIsSettingsOn(false);
-  }
-
-  function closeModal(e) {
-    e.preventDefault();
-    console.log(e);
   }
 
   function handleInputChange(e) {
@@ -76,7 +71,7 @@ const Modal = ({ isSettingsOn, setIsSettingsOn, setPomodoro }) => {
               onSubmit={handleSubmit}>
               <ModalInput
                 label={"pomodoro"}
-                name={"pomodoro"}
+                name={"pomodoroTime"}
                 defaultValue={stages.pomodoroTime / 60}
                 setFormData={setFormData}
                 onChange={handleInputChange}
