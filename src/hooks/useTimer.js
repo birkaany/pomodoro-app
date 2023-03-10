@@ -8,7 +8,6 @@ const useTimer = () => {
   const [pomodoro, setPomodoro] = useState(stages);
   const periodId = useRef(stages.period);
 
-  // Reset timer values when selectControl activated
   const resetTimerValues = () => {
     setPomodoro((prevPomodoro) => ({
       ...prevPomodoro,
