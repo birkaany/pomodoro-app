@@ -1,8 +1,8 @@
-import { controllers } from "../constants/constants";
+import useCalculateTime from "../hooks/useCalculateTime";
 
 const TimeDisplay = ({ pomodoro, selectedControl }) => {
-  const minutes = Math.floor(pomodoro[controllers[selectedControl].value] / 60);
-  const seconds = Math.floor(pomodoro[controllers[selectedControl].value] % 60);
+  const { minutes, seconds } = useCalculateTime({ pomodoro, selectedControl });
+
   return (
     <>
       {minutes < 9 ? "0" : ""}

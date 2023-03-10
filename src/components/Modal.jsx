@@ -35,7 +35,6 @@ const Modal = ({ isSettingsOn, setIsSettingsOn, setPomodoro }) => {
       setIsSettingsOn(false);
     }
   }
-  console.log(modalRef.current);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleOutsideClick);

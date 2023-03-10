@@ -6,10 +6,16 @@ import useTimer from "./hooks/useTimer";
 import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useState } from "react";
+import useCalculateTime from "./hooks/useCalculateTime";
+import { controllers } from "./constants/constants";
 
 const App = () => {
   const { pomodoro, selectedControl, setPomodoro, setSelectedControl, resetTimerValues, getRemainingTimePercentage } = useTimer();
+  const { minutes, seconds } = useCalculateTime({ pomodoro, selectedControl });
   const [isSettingsOn, setIsSettingsOn] = useState(false);
+
+  document.title = `${controllers[selectedControl].label} - ${minutes < 9 ? "0" : ""}${minutes}:${seconds < 9 ? "0" : ""}${seconds}`;
+
   return (
     <main className="relative flex flex-col justify-center items-center">
       <Labels
