@@ -72,21 +72,21 @@ const Modal = ({ isSettingsOn, setIsSettingsOn, setPomodoro }) => {
               <ModalInput
                 label={"pomodoro"}
                 name={"pomodoroTime"}
-                defaultValue={stages.pomodoroTime / 60}
+                defaultValue={formData.pomodoroTime}
                 setFormData={setFormData}
                 onChange={handleInputChange}
               />
               <ModalInput
                 label={"short break"}
                 name={"shortBreakTime"}
-                defaultValue={stages.shortBreakTime / 60}
+                defaultValue={formData.shortBreakTime}
                 setFormData={setFormData}
                 onChange={handleInputChange}
               />
               <ModalInput
                 label={"long break"}
                 name={"longBreakTime"}
-                defaultValue={stages.longBreakTime / 60}
+                defaultValue={formData.longBreakTime}
                 setFormData={setFormData}
                 onChange={handleInputChange}
               />

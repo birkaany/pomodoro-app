@@ -1,9 +1,13 @@
 import { controllers } from "../constants/constants";
 
-const Labels = ({ selectedControl, setSelectedControl, resetTimerValues }) => {
+const Labels = ({ selectedControl, setSelectedControl, resetTimerValues, setPomodoro }) => {
   function handleSelectedControl(index) {
     setSelectedControl(index);
     resetTimerValues();
+    setPomodoro((prevPomodoro) => ({
+      ...prevPomodoro,
+      isPaused: true,
+    }));
   }
 
   return (

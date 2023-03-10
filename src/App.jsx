@@ -22,6 +22,7 @@ const App = () => {
         resetTimerValues={resetTimerValues}
         selectedControl={selectedControl}
         setSelectedControl={setSelectedControl}
+        setPomodoro={setPomodoro}
       />
       <div className="tw-timer-container">
         <div className="tw-timer">

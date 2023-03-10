@@ -19,15 +19,12 @@ const useTimer = () => {
       pomodoroTime: formData.pomodoroTime * 60,
       shortBreakTime: formData.shortBreakTime * 60,
       longBreakTime: formData.longBreakTime * 60,
-      isPaused: true,
     }));
   };
 
   const getRemainingTimePercentage = () => {
     const totalTime = formData[controllers[selectedControl].value] * 60;
-    console.log(totalTime);
     const remainingTime = pomodoro[controllers[selectedControl].value];
-    console.log(remainingTime);
     return (remainingTime / totalTime) * 100;
   };
 
@@ -45,10 +42,10 @@ const useTimer = () => {
               }
             });
 
-            periodId.current += 1;
             resetTimerValues();
             clearInterval(timer);
             Sound();
+            periodId.current += 1;
 
             return prevPomodoro;
           }
