@@ -42,7 +42,7 @@ const Modal = ({ isSettingsOn, setIsSettingsOn, setPomodoro }) => {
     <>
       {isSettingsOn && (
         <div
-          className={`block modal absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-[28rem] rounded-2xl text-pmd-blue-800 px-6 pt-6 pb-12`}
+          className={`block modal absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-[20rem] md:w-[28rem] rounded-2xl text-pmd-blue-800 px-6 pt-6 pb-12`}
           ref={modalRef}>
           <div className=" flex pb-6 border-b justify-between items-center">
             <h2 className="font-bold text-xl">Settings</h2>
