@@ -33,14 +33,28 @@ const Modal = ({ isSettingsOn, setIsSettingsOn, setPomodoro }) => {
   return (
     <>
       {isSettingsOn && (
-        <div className={`block modal absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-[28rem] rounded-2xl text-pmd-blue-800 p-6`}>
-          <div className=" flex py-6 border-b justify-between items-center">
-            <h2>Settings</h2>
-            <button onClick={() => setIsSettingsOn(false)}>X</button>
+        <div className={`block modal absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-[28rem] rounded-2xl text-pmd-blue-800 px-6 pt-6 pb-12`}>
+          <div className=" flex pb-6 border-b justify-between items-center">
+            <h2 className="font-bold text-xl">Settings</h2>
+            <button onClick={() => setIsSettingsOn(false)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
           </div>
 
           <div>
-            <h3>Time (minutes)</h3>
+            <h3 className="uppercase tracking-wider font-bold text-sm py-3">Time (minutes)</h3>
 
             <form
               className="inputs flex"
