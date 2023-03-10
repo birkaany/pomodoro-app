@@ -1,6 +1,9 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import { stages, controllers } from "../constants/constants";
+import { FormDataContext } from "../context/FormDataContext";
+
 const useTimer = () => {
+  const { formData } = useContext(FormDataContext);
   const [selectedControl, setSelectedControl] = useState(0);
   const [pomodoro, setPomodoro] = useState(stages);
   const periodId = useRef(stages.period);
@@ -9,11 +12,13 @@ const useTimer = () => {
   const resetTimerValues = () => {
     setPomodoro((prevPomodoro) => ({
       ...prevPomodoro,
-      pomodoroTime: stages.pomodoroTime,
-      shortBreakTime: stages.shortBreakTime,
-      longBreakTime: stages.longBreakTime,
+      pomodoroTime: formData.pomodoro * 60,
+      shortBreakTime: formData.shortBreakTime * 60,
+      longBreakTime: formData.longBreakTime * 60,
+      isPaused: true,
     }));
   };
+
   const getRemainingTimePercentage = () => {
     const totalTime = stages[controllers[selectedControl].value];
     const remainingTime = pomodoro[controllers[selectedControl].value];
