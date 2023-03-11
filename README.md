@@ -45,7 +45,7 @@
 
 <p>This is a single page application to simulate pizza ordering page.</p>
 
-!https://www.hizliresim.com/s7odewh görsel
+!(https://www.hizliresim.com/s7odewh)
 
 
 <br/>
