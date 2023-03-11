@@ -43,7 +43,7 @@
 
 ## <strong>About The Project</strong>
 
-<p>This is a single page application to simulate pizza ordering page.</p>
+
 
 ![https://i.hizliresim.com/s7odewh.png](https://i.hizliresim.com/s7odewh.png)
 
